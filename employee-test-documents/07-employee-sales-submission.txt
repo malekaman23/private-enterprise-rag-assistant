@@ -1,0 +1,10 @@
+DEMO COMPANY - EMPLOYEE SALES UPDATE
+Synthetic test document - no real company data.
+
+Submitted by: sales employee for admin approval.
+Suggested category: Sales.
+Suggested department: sales.
+
+This week the Bluebird Logistics opportunity moved to negotiation. The customer requested a revised implementation timeline and a pilot proposal. The account owner recommends a manager review before the next customer meeting.
+
+Test expectation: upload this as an employee or sales user. It must appear in the admin approval queue and must not be searchable until an admin approves it.

@@ -1,0 +1,5 @@
+Finance approval policy — synthetic data.
+
+Department managers may approve operational purchases up to INR 50,000 within an approved budget. Finance approval is required above INR 50,000. Executive approval is required for unbudgeted spend above INR 250,000, new debt, customer credits above INR 100,000 or changes to payment terms.
+
+Payment card numbers, bank credentials, tax identifiers and customer financial documents must never be pasted into chat. Use the approved finance system and retain only the minimum data required for reconciliation.

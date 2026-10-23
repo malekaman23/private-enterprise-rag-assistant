@@ -1,0 +1,7 @@
+opportunity_id,segment,region,stage,expected_value_inr,probability_percent,expected_close,owner
+NX-2601,mid_market,west,proposal,850000,60,2026-11-12,aarav
+NX-2602,enterprise,south,security_review,2400000,55,2026-12-05,meera
+NX-2603,mid_market,north,negotiation,1250000,75,2026-10-28,rohan
+NX-2604,enterprise,west,renewal_risk,1800000,35,2026-11-20,meera
+NX-2605,startup,south,discovery,420000,25,2027-01-15,dev
+NX-2606,mid_market,east,closed_won,950000,100,2026-10-08,aarav

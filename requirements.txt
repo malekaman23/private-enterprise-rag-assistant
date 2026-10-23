@@ -1,0 +1,33 @@
+langchain
+langchain-community
+langchain-groq
+langchain-openai
+langchain-anthropic
+langchain-ollama
+# llama-cpp-python ka Windows pre-built wheel is index se milta hai -
+# warna pip source se compile karne ki koshish karta hai (jiske liye
+# C++ build tools chahiye hote hain, jo zyadatar systems pe nahi hote)
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+llama-cpp-python
+langchain-huggingface
+langchain-chroma
+chromadb
+sentence-transformers
+# NOTE: torch ka koi version yaha pin nahi kiya - jo bhi torch already
+# installed hai (chahe kisi aur tool ke liye ho) wahi use hoga. Agar torch
+# bilkul bhi installed nahi hai, pip khud latest compatible version le lega.
+tavily-python
+streamlit
+starlette>=1.6.0
+python-dotenv
+pypdf
+docx2txt
+gtts
+groq
+fastapi
+uvicorn
+python-multipart
+PyJWT[crypto]>=2.8
+SQLAlchemy>=2.0
+psycopg[binary]>=3.1
+redis>=5.0

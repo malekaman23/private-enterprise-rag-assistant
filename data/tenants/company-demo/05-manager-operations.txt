@@ -1,0 +1,9 @@
+DEMO COMPANY - OPERATIONS MANAGER RUNBOOK
+Synthetic test document - no real company data.
+
+Audience: manager, executive, and admin roles.
+Department: operations.
+
+Managers review delivery exceptions, approve operational changes, and escalate incidents that affect customer commitments. A manager may see manager-level operational guidance but must not access HR or finance records without the relevant department assignment.
+
+Test expectation: employee and sales users must not retrieve this document; a manager should retrieve it.

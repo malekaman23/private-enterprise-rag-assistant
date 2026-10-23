@@ -1,0 +1,5 @@
+People Operations policy — synthetic data.
+
+HR owns recruitment, onboarding, benefits, payroll coordination, employee relations and offboarding. Managers may view information needed to manage their direct reports, but only HR administrators may view compensation and medical or identity records.
+
+For an employee request, provide the relevant policy and direct them to HR for personal-record questions. Never expose a full employee list, salary table or identity document through general company search.

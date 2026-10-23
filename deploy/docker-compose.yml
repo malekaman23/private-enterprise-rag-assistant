@@ -1,0 +1,101 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      APP_ENV: production
+      PRODUCT_MODE: ${PRODUCT_MODE:-company}
+      DEMO_MODE: ${DEMO_MODE:-false}
+      ALLOW_CLOUD_PROVIDERS: ${ALLOW_CLOUD_PROVIDERS:-false}
+      ALLOW_CLOUD_DOCUMENT_CONTEXT: ${ALLOW_CLOUD_DOCUMENT_CONTEXT:-false}
+      API_CORS_ORIGINS: ${API_CORS_ORIGINS:-http://localhost}
+      API_TENANT_ID: ${API_TENANT_ID:-company-demo}
+      API_USER_ID: ${API_USER_ID:-demo-admin}
+      # Demo-only multi-user bootstrap. Prefer OIDC in production.
+      API_TOKENS_JSON: ${API_TOKENS_JSON:-}
+      LLM_PROVIDER: ${LLM_PROVIDER:-local}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      API_AUTH_TOKEN_FILE: /run/secrets/api_auth_token
+      DATABASE_URL_FILE: /run/secrets/database_url
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:-}
+      OIDC_JWKS_URL: ${OIDC_JWKS_URL:-}
+      OIDC_TENANT_CLAIM: ${OIDC_TENANT_CLAIM:-tenant_id}
+      OIDC_ROLES_CLAIM: ${OIDC_ROLES_CLAIM:-roles}
+      OIDC_DEPARTMENTS_CLAIM: ${OIDC_DEPARTMENTS_CLAIM:-departments}
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-120}
+      REDIS_URL: redis://redis:6379/0
+      # Set COMPANY_DATA_HOST_PATH to a reviewed local/NAS mount for a real company.
+      COMPANY_DATA_ROOT: ${COMPANY_DATA_ROOT:-/company-share}
+    volumes:
+      - ../models:/app/models:ro
+      - ../data:/app/data
+      - ../memory:/app/memory
+      - ../vectorstore:/app/vectorstore
+      # Read-only by design; default is the synthetic demo server.
+      - ${COMPANY_DATA_HOST_PATH:-../demo-company-server}:/company-share:ro
+    expose:
+      - "8000"
+    secrets:
+      - api_auth_token
+      - database_url
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: assistant
+      POSTGRES_USER: assistant
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U assistant -d assistant"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    secrets:
+      - postgres_password
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+      args:
+        VITE_API_BASE: /api
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+
+secrets:
+  api_auth_token:
+    file: secrets/api_auth_token
+  database_url:
+    file: secrets/database_url
+  postgres_password:
+    file: secrets/postgres_password

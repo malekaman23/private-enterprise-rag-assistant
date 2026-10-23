@@ -1,0 +1,5 @@
+Delivery operations runbook — synthetic data.
+
+Every implementation starts with a scope review, named delivery owner, acceptance criteria, security review and rollback plan. A project is considered at risk when milestone completion is below 80%, utilization exceeds 90% for two consecutive weeks or a critical dependency is blocked for more than three business days.
+
+Managers may view delivery health, staffing capacity and incident summaries for their department. Customer contract details and executive risk forecasts require the relevant management or executive role.

@@ -1,0 +1,9 @@
+# Example company-share overlay. Copy and edit for a real host; do not enable
+# until the host path and permissions have been reviewed by an administrator.
+services:
+  backend:
+    environment:
+      COMPANY_DATA_ROOT: /company-share
+    volumes:
+      - /srv/company-share:/company-share:ro
+
