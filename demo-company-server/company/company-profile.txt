@@ -1,6 +1,0 @@
-Nexora Systems Pvt. Ltd. is a fictional mid-sized B2B software and managed-services company headquartered in Pune, India, with teams in Bengaluru and Delhi.
-
-Business units: Sales, Finance, Human Resources, Operations, Engineering and Customer Success.
-Current planning year: FY2026-27. Reporting currency: INR. Fiscal year ends 31 March.
-
-The company sells workflow automation, analytics implementation and managed support to mid-market customers. The management team reviews revenue, gross margin, collections, customer retention, delivery utilization and security incidents monthly.

@@ -1,5 +1,0 @@
-Information security baseline — synthetic data.
-
-All production access requires MFA, least privilege and an auditable identity. Secrets belong in the approved secrets manager, never in source code, chat messages or uploaded documents. Company data servers are mounted read-only to the RAG indexer.
-
-Security incidents must be classified, contained and escalated to the security owner. The RAG assistant must refuse to reveal documents outside the authenticated user's tenant, department and role scope. External actions require explicit approval and must be logged.

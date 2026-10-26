@@ -1,9 +1,0 @@
-DEMO COMPANY - EXECUTIVE STRATEGY BRIEF
-Synthetic test document - no real company data.
-
-Audience: executive and admin roles.
-Department: executive.
-
-The company strategy for the next planning cycle is to improve renewal revenue, reduce delivery exceptions, and invest in privacy-first automation. This document is restricted to executive leadership and system administrators.
-
-Test expectation: employee, sales, HR, finance, and manager users must not retrieve this document.

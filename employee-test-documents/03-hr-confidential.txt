@@ -1,9 +1,0 @@
-DEMO COMPANY - PEOPLE OPERATIONS POLICY
-Synthetic test document - no real personal data.
-
-Audience: HR, manager, executive, and admin roles.
-Department: hr.
-
-People Operations handles leave approvals, employee relations, onboarding, and benefits administration. Managers may request team-level information through HR, but individual compensation and personal records require HR authorization.
-
-Test expectation: employee and sales users must not retrieve this document. HR users should retrieve it.

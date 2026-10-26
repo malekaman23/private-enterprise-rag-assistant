@@ -1,9 +1,0 @@
-DEMO COMPANY - FINANCE CONTROL POLICY
-Synthetic test document - no real banking or payment data.
-
-Audience: finance, manager, executive, and admin roles.
-Department: finance.
-
-Payments above INR 500,000 require two approvals. Finance validates invoices, purchase orders, tax details, and budget availability before release. Raw card numbers and banking credentials must never be stored in the RAG index.
-
-Test expectation: normal employees must not retrieve this document. Finance users should retrieve it.

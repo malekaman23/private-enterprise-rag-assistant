@@ -1,49 +1,30 @@
-# Dependencies
 node_modules/
-frontend/node_modules/
-frontend/dist/
-
-# Models
+.env
+*.env
+data/
+models/
+memory/
+vectorstore/
+*.db
+*.sqlite
+*.sqlite3
+*.ps1
 *.gguf
 *.bin
-models/
-
-# Secrets
-.env
-.env.*
-*.key
-*.pem
-
-# Databases / user data
-*.db
-*.sqlite3
-memory/*.db
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.pkl
 chroma_db/
-vectorstore/
-*.faiss
-
-# Python
+faiss_index/
 __pycache__/
 *.pyc
-venv/
-.venv/
-
-# Personal PC scripts
-system-health-repair.ps1
-taskbar-search-repair.ps1
-windows-repair-admin.ps1
-
-# Editor / OS
-.vscode/
-.DS_Store
-
-# Secrets (sirf README rakho)
+.env.*
+!.env.example
+backups/
+demo-company-server/
+demo-upload-pending/
+employee-test-documents/
 deploy/secrets/*
 !deploy/secrets/README.md
-
-# Personal PC repair scripts
-docker-*-admin.ps1
-
-# Backups / runtime data
-backups/
-data/company_data_server.json

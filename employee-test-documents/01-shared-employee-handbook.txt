@@ -1,9 +1,0 @@
-DEMO COMPANY - EMPLOYEE HANDBOOK
-Synthetic test document - no real company data.
-
-Audience: shared and employee roles.
-Department: company-wide.
-
-Employees should follow the attendance policy, protect company credentials, report security incidents to IT, and use approved storage for company files. Questions about benefits and leave should be sent to People Operations.
-
-Test expectation: employee, sales, HR, finance, manager, executive, and admin users may retrieve this shared document.
